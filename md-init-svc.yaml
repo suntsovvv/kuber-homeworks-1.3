@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: md-init-svc
+spec:
+  selector:
+    app: init-nginx
+  ports:
+    - name: nginx
+      port: 80

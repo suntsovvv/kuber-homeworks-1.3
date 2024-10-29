@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: md-init
+  labels:
+    app: md
+spec:
+#  replicas: 2
+  selector:
+    matchLabels:
+      app: init-nginx
+  template:
+    metadata:
+      labels:
+        app: init-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+      initContainers:
+      - name: busybox
+        image: busybox
+        command: ['sh', '-c', "until nslookup md-init-svc.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for md-init-svc; sleep 2; done"]
