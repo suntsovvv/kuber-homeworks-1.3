@@ -247,7 +247,7 @@ my-deployment-8569b9d87d-xhpfb   2/2     Running   0          5h44m
 
 
 
-Ссылки на манифесты:
+Ссылка на манифесты:
 https://github.com/suntsovvv/kuber-homeworks-1.3
 
 ------
