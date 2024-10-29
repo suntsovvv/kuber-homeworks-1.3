@@ -64,19 +64,6 @@ NAME                             READY   STATUS    RESTARTS   AGE
 my-deployment-8569b9d87d-fdbbn   2/2     Running   0          16m
 my-deployment-8569b9d87d-xhpfb   2/2     Running   0          25m 
 ```
-Создал namespace "netology-homework":
-```bash
-user@microk8s:~$ kubectl create namespace netology-homework
-namespace/netology-homework created
-user@microk8s:~$ kubectl get namespaces 
-NAME                   STATUS   AGE
-default                Active   5d5h
-kube-node-lease        Active   5d5h
-kube-public            Active   5d5h
-kube-system            Active   5d5h
-kubernetes-dashboard   Active   4d1h
-netology-homework      Active   4s
-```
 
 5. Создать Service, который обеспечит доступ до реплик приложений из п.1.
 Создал манифест md-svc.yaml:
